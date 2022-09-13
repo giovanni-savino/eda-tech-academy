@@ -4,9 +4,37 @@ This is a brief introduction to how you can observe your Event Streams Deploymen
 
 In this exercise, you will see how Instana can monitor: OCP, Kafka Brokers, Zookeeper, Kafka Connect and custom deployed applications.
 
-## Demonstration by Instana Tech Sellers
+In order to proceed with the demo, an Instana instance and OCP cluster are required.
 
-The Instana Tech Sellers will show a demo of Instana.
+If you want to deploy an Instana VM server, you can use [this Techzone guide](https://techzone.ibm.com/collection/instana-selfdeployon-vsi).
+
+## Demonstration by Instana Tech Sellers
+<!---
+Edited
+-->
+
+After you install an Instana environment, you need to deploy an Instana agent on yout OCP cluster. To install the agent on your OCP cluster, you can automatically generate the list of resourcers from your Instana insance:
+
+* Access the Instana console with the provided credential and click on the top-right button "Deploy Agent"
+
+![](./images/Instana-console-1.png){: style="width:100%"}
+        
+![](./images/Instana-console-2.png){: style="width:100%"}
+* Select OpenShift, Technology YAML
+* Insert a name for your OCP cluster
+* Download the yaml to be applied
+* Connect with OC CLI to your OCP cluster where the agent will be installed
+
+`$ oc login --token=<token> --server=<url>`
+
+* Apply the downloaded instana-agent.yaml
+
+`$ oc apply -f instana-agent.yaml`
+
+
+The agent will create an OCP project (instana-agent) and will deploy a set of resources 
+
+If you connect to your Instana console, after a couple of minutes, you will start receive info from your OCP cluster.
 
 
 ## Access the Instana Instance connected to the Event Streams Cluster
@@ -129,14 +157,3 @@ Instana is the **ONLY** tool that provides full end to end Kafka Message Observa
 1. Click on the "Get Started" button at the bottom left hand corner.  Follow each of the 5 tutorials to get a feel for Instana.
 
     ![](./images/sandbox-getting-started.png)
-
-
-
-
-
-
-
-
-
-
-
