@@ -31,7 +31,7 @@ git clone  https://github.com/ibm-cloud-architecture/eda-tech-academy.git
 The content of this repository is written with markdown files, packaged with [MkDocs](https://www.mkdocs.org/) and can be built into a book-readable format by MkDocs build processes.
 
 1. Install MkDocs locally following the [official documentation instructions](https://www.mkdocs.org/#installation).
-1. Install Material plugin for mkdocs:  `pip install mkdocs-material` 
+1. Install Material and Minify plugin for mkdocs:  `pip install mkdocs-material` and `pip install mkdocs-minify-plugin`
 1. `mkdocs serve`
 1. Go to `http://127.0.0.1:8000/` in your browser.
 
